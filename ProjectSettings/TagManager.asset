@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Ground Parent
   layers:
   - Default
   - TransparentFX

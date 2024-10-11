@@ -63,7 +63,7 @@ public class Player : MonoBehaviour
         if(other.gameObject.tag == "Ground")
         {   
             isGround = false;
-            Destroy(other.gameObject);
+            Destroy(other.gameObject,3f);
         }
     }
 }

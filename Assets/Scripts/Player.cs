@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -45,6 +46,24 @@ public class Player : MonoBehaviour
         {
             animator.SetBool("jump", false);
             isGround = true;
+            //Console.WriteLine("Grounded");
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.tag == "Ground")
+        {
+            FindObjectOfType<Spawner>().SpawnGround();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if(other.gameObject.tag == "Ground")
+        {   
+            isGround = false;
+            Destroy(other.gameObject);
         }
     }
 }
